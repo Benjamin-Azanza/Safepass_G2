@@ -27,8 +27,8 @@ class RegistroViewModel : ViewModel() {
 
         val edad = edadTexto.toIntOrNull()
 
-        edad?.let {
-            val asistenteFinal = asistente.copy(edad = it)
+        edad?.let { edadValida ->
+            val asistenteFinal = asistente.copy(edad = edadValida)
 
             val resultado = procesarAsistente(asistenteFinal) { a ->
                 a.tipoEntrada.uppercase() == "VIP"
